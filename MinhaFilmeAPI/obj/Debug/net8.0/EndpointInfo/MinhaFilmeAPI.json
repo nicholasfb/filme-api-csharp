@@ -1,0 +1,70 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "MinhaFilmeAPI",
+    "version": "1.0"
+  },
+  "paths": {
+    "/Filme": {
+      "post": {
+        "tags": [
+          "Filme"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Filme"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Filme"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Filme"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Filme": {
+        "required": [
+          "duracaoEmMinutos",
+          "genero",
+          "titulo"
+        ],
+        "type": "object",
+        "properties": {
+          "titulo": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "genero": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string"
+          },
+          "duracaoEmMinutos": {
+            "maximum": 600,
+            "minimum": 70,
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

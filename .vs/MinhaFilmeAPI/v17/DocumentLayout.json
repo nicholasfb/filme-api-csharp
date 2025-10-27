@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Repositorios\\Visual Studio\\MinhaFilmeAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA2B006-0219-4625-BE2C-C5551BE790C4}|MinhaFilmeAPI\\MinhaFilmeAPI.csproj|c:\\repositorios\\visual studio\\minhafilmeapi\\minhafilmeapi\\controllers\\filmecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA2B006-0219-4625-BE2C-C5551BE790C4}|MinhaFilmeAPI\\MinhaFilmeAPI.csproj|solutionrelative:minhafilmeapi\\controllers\\filmecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA2B006-0219-4625-BE2C-C5551BE790C4}|MinhaFilmeAPI\\MinhaFilmeAPI.csproj|c:\\repositorios\\visual studio\\minhafilmeapi\\minhafilmeapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DDA2B006-0219-4625-BE2C-C5551BE790C4}|MinhaFilmeAPI\\MinhaFilmeAPI.csproj|solutionrelative:minhafilmeapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA2B006-0219-4625-BE2C-C5551BE790C4}|MinhaFilmeAPI\\MinhaFilmeAPI.csproj|c:\\repositorios\\visual studio\\minhafilmeapi\\minhafilmeapi\\models\\filme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA2B006-0219-4625-BE2C-C5551BE790C4}|MinhaFilmeAPI\\MinhaFilmeAPI.csproj|solutionrelative:minhafilmeapi\\models\\filme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDA2B006-0219-4625-BE2C-C5551BE790C4}|MinhaFilmeAPI\\MinhaFilmeAPI.csproj|c:\\repositorios\\visual studio\\minhafilmeapi\\minhafilmeapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDA2B006-0219-4625-BE2C-C5551BE790C4}|MinhaFilmeAPI\\MinhaFilmeAPI.csproj|solutionrelative:minhafilmeapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 190,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Filme.cs",
+              "DocumentMoniker": "C:\\Repositorios\\Visual Studio\\MinhaFilmeAPI\\MinhaFilmeAPI\\Models\\Filme.cs",
+              "RelativeDocumentMoniker": "MinhaFilmeAPI\\Models\\Filme.cs",
+              "ToolTip": "C:\\Repositorios\\Visual Studio\\MinhaFilmeAPI\\MinhaFilmeAPI\\Models\\Filme.cs",
+              "RelativeToolTip": "MinhaFilmeAPI\\Models\\Filme.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T04:21:52.804Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FilmeController.cs",
+              "DocumentMoniker": "C:\\Repositorios\\Visual Studio\\MinhaFilmeAPI\\MinhaFilmeAPI\\Controllers\\FilmeController.cs",
+              "RelativeDocumentMoniker": "MinhaFilmeAPI\\Controllers\\FilmeController.cs",
+              "ToolTip": "C:\\Repositorios\\Visual Studio\\MinhaFilmeAPI\\MinhaFilmeAPI\\Controllers\\FilmeController.cs",
+              "RelativeToolTip": "MinhaFilmeAPI\\Controllers\\FilmeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T04:17:35.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Repositorios\\Visual Studio\\MinhaFilmeAPI\\MinhaFilmeAPI\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "MinhaFilmeAPI\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Repositorios\\Visual Studio\\MinhaFilmeAPI\\MinhaFilmeAPI\\Properties\\launchSettings.json",
+              "RelativeToolTip": "MinhaFilmeAPI\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-27T04:06:03.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Repositorios\\Visual Studio\\MinhaFilmeAPI\\MinhaFilmeAPI\\Program.cs",
+              "RelativeDocumentMoniker": "MinhaFilmeAPI\\Program.cs",
+              "ToolTip": "C:\\Repositorios\\Visual Studio\\MinhaFilmeAPI\\MinhaFilmeAPI\\Program.cs",
+              "RelativeToolTip": "MinhaFilmeAPI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T04:05:38.453Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
