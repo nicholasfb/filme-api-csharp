@@ -8,8 +8,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "filme",
-        "Type": "MinhaFilmeAPI.Models.Filme",
+        "Name": "filmeDto",
+        "Type": "MinhaFilmeAPI.Data.Dtos.CreateFilmeDto",
         "IsRequired": true
       }
     ],
@@ -17,8 +17,113 @@
       {
         "Type": "System.Void",
         "MediaTypes": [],
+        "StatusCode": 201
+      }
+    ]
+  },
+  {
+    "ContainingType": "MinhaFilmeAPI.Controllers.FilmeController",
+    "Method": "ListaFilmes",
+    "RelativePath": "Filme",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "skip",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "take",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MinhaFilmeAPI.Data.Dtos.ReadFilmeDto, MinhaFilmeAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "MinhaFilmeAPI.Controllers.FilmeController",
+    "Method": "BuscaFilmePorId",
+    "RelativePath": "Filme/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MinhaFilmeAPI.Controllers.FilmeController",
+    "Method": "AtualizaFilme",
+    "RelativePath": "Filme/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "filmeDto",
+        "Type": "MinhaFilmeAPI.Data.Dtos.UpdateFilmeDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MinhaFilmeAPI.Controllers.FilmeController",
+    "Method": "AtualizaFilmeParcial",
+    "RelativePath": "Filme/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "patch",
+        "Type": "Microsoft.AspNetCore.JsonPatch.Operations.Operation[]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MinhaFilmeAPI.Controllers.FilmeController",
+    "Method": "DeletaFilme",
+    "RelativePath": "Filme/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

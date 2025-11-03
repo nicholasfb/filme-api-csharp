@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "MinhaFilmeAPI",
-    "version": "1.0"
+    "title": "FilmesAPI",
+    "version": "v1"
   },
   "paths": {
     "/Filme": {
@@ -10,21 +10,164 @@
         "tags": [
           "Filme"
         ],
+        "summary": "Adiciona um filme ao banco de dados",
         "requestBody": {
+          "description": "Objeto com os campos necessários para criação de um filme",
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateFilmeDto"
+              }
+            },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Filme"
+                "$ref": "#/components/schemas/CreateFilmeDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Filme"
+                "$ref": "#/components/schemas/CreateFilmeDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Filme"
+                "$ref": "#/components/schemas/CreateFilmeDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Caso inserção seja feita com sucesso"
+          },
+          "400": {
+            "description": "Caso os dados do corpo do JSON estejam incorretos"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Filme"
+        ],
+        "summary": "Lista os filmes do banco de dados",
+        "parameters": [
+          {
+            "name": "skip",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "take",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 5
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Caso retorne a lista com sucesso",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ReadFilmeDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ReadFilmeDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ReadFilmeDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Filme/{id}": {
+      "get": {
+        "tags": [
+          "Filme"
+        ],
+        "summary": "Retorna um filme específico pelo Id",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID do filme que deseja pesquisar",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Caso encontre o filme pelo ID passado por parâmetro"
+          },
+          "404": {
+            "description": "Caso não encontre o filme que foi passado pelo ID por parâmetro"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Filme"
+        ],
+        "summary": "Atualiza os dados de um filme pelo ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID do filme que deseja alterar os dados",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "JSON com a estrutura e valores que deseja atualizar",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateFilmeDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateFilmeDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateFilmeDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateFilmeDto"
               }
             }
           }
@@ -32,6 +175,107 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "204": {
+            "description": "Caso a atualização seja feita com sucesso"
+          },
+          "404": {
+            "description": "Caso não encontre o filme que foi passado pelo ID por parâmetro"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Filme"
+        ],
+        "summary": "Atualiza parcialmente um filme pelo ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID do filme que deseja atualizar parcilamente",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "JSON com os dados que deseja atualizar parcialmente",
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Operation"
+                }
+              }
+            },
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Operation"
+                }
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Operation"
+                }
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Operation"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "Caso a atualização seja feita com sucesso"
+          },
+          "404": {
+            "description": "Caso não encontre o filme que foi passado pelo ID por parâmetro"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Filme"
+        ],
+        "summary": "Deleta filme pelo ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID do filme que deseja deletar",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "204": {
+            "description": "Caso a deleção seja feita com sucesso"
+          },
+          "404": {
+            "description": "Caso não encontre o filme que foi passado pelo ID por parâmetro"
           }
         }
       }
@@ -39,7 +283,7 @@
   },
   "components": {
     "schemas": {
-      "Filme": {
+      "CreateFilmeDto": {
         "required": [
           "duracaoEmMinutos",
           "genero",
@@ -53,7 +297,92 @@
           },
           "genero": {
             "maxLength": 50,
+            "minLength": 0,
+            "type": "string"
+          },
+          "duracaoEmMinutos": {
+            "maximum": 600,
+            "minimum": 70,
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Operation": {
+        "type": "object",
+        "properties": {
+          "operationType": {
+            "$ref": "#/components/schemas/OperationType"
+          },
+          "path": {
+            "type": "string",
+            "nullable": true
+          },
+          "op": {
+            "type": "string",
+            "nullable": true
+          },
+          "from": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OperationType": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ReadFilmeDto": {
+        "type": "object",
+        "properties": {
+          "titulo": {
+            "type": "string",
+            "nullable": true
+          },
+          "genero": {
+            "type": "string",
+            "nullable": true
+          },
+          "duracaoEmMinutos": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "horaDaConsulta": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateFilmeDto": {
+        "required": [
+          "duracaoEmMinutos",
+          "genero",
+          "titulo"
+        ],
+        "type": "object",
+        "properties": {
+          "titulo": {
             "minLength": 1,
+            "type": "string"
+          },
+          "genero": {
+            "maxLength": 50,
+            "minLength": 0,
             "type": "string"
           },
           "duracaoEmMinutos": {
